@@ -33,7 +33,6 @@ public class MyUserDetailsService implements UserDetailsService {
             //认证失败
             throw new UsernameNotFoundException("用户名不存在");
         }
-
         //权限
         List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
         //返回User
