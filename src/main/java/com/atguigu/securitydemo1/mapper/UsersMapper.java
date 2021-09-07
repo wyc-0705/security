@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-//与数据库交互
+//与数据库交互 相当于dao层
 @Repository
 @Mapper
 public interface UsersMapper extends BaseMapper<Users> {
