@@ -33,8 +33,8 @@ public class MyUserDetailsService implements UserDetailsService {
             //认证失败
             throw new UsernameNotFoundException("用户名不存在");
         }
-        //权限
-        List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+        //权限 这些用户有admin 和sale权限
+        List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("admins,ROLE_sale");//hasrole底层封装过了
         //返回User
         return new User(users.getUsername(),new BCryptPasswordEncoder().encode(users.getPassword()),auths);
     }
